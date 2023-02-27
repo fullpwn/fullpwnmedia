@@ -43,16 +43,101 @@ html {
     color: white;
    }
 }
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
+
+.videoWrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ambilightWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  aspect-ratio: 16 / 9;
+}
+
+#ambilight {
+  filter: blur(80px) opacity(0.5) saturate(300%);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: scale(1.1) translateZ(0);
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+}
   </style>
 </head>
 <body>
 <h1>fullpwnmedia</h1>
 <h3>Archiving Australia.</h3>
-<video src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-002.mp4" poster="https://archive.org/download/abc-dump-20-02-2023/vault.png" playsinline controls></video>
+
+<div class="videoWrapper">
+  <div class="ambilightWrapper">
+    <div class="aspectRatio">
+      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-002.mp4" poster="https://archive.org/download/abc-dump-20-02-2023/vault.png" playsinline controls></video>
+    </div>
+    <canvas id="ambilight"></canvas>
+  </div>
+</div>
 <h2>Where would you like to go?</h2>
 <a href="https://archive.org/details/@fullpwnmedia">Internet Archive</a>
 <br>
 <a href="http://youtube.com/@fullpwn">YouTube</a>
+
+<script>
+let intervalId;
+const FRAMERATE = 30;
+
+window.onload = function () {
+  const canvas = document.getElementById("ambilight");
+  const context = canvas.getContext("2d");
+
+  const video = document.getElementById("video");
+
+  function repaintAmbilight() {
+    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+  }
+
+  function startAmbilightRepaint() {
+    intervalId = window.setInterval(repaintAmbilight, 1000 / FRAMERATE);
+  }
+
+  function stopAmbilightRepaint() {
+    clearInterval(intervalId);
+  }
+
+  video.addEventListener("play", startAmbilightRepaint);
+
+  video.addEventListener("pause", stopAmbilightRepaint);
+
+  video.addEventListener("ended", stopAmbilightRepaint);
+  
+  video.addEventListener("seeked", repaintAmbilight);
+  
+  video.addEventListener("load", repaintAmbilight);
+
+  // load first frame
+  repaintAmbilight();
+  video.currentTime = 0;
+};
+</script>
 </body>
 </html>
