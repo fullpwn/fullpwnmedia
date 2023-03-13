@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fullpwnmedia</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <style>
+@font-face {
+  font-family:'SF Pro Display';
+  src: url("fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  /* (C) 2015 Apple Inc. All rights reserved.*/
+}
+
+* {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+}
+a {
+  color: black;
+}
+video {
+  border-radius: 25px;
+  height: 75%;
+  width: 75%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+html {
+  margin: 35px
+}
+
+
+@media (prefers-color-scheme: dark) {
+   body {
+     background-color: #18181b;
+     color: white;
+   }
+   a {
+    color: white;
+   }
+}
+
+.image-marq {
+  border-radius: 18px;
+  height: 15%;
+}
+
+
+.videoWrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ambilightWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#video {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  aspect-ratio: 16 / 9;
+}
+marquee {
+  width: 100%
+  border-radius: 25px;
+}
+  </style>
+</head>
+<body id="img">
+</body>
+<script>
+fetch('thumb_list.txt')
+.then(response => response.text()) 
+.then(textString => {
+    //Split the csv into rows
+    const rows = textString.split('\n');
+    for (row of rows) {
+    //Split the row into each of the comma separated values
+        var node = document.createElement("img");
+        node.setAttribute('src', 'abc-dump-20-02-2023/abc-dump-20-02-2023.thumbs/' + row.split(","))
+        node.setAttribute('class', 'image-marq');
+        document.getElementById("img").appendChild(node);
+    }
+    console.log("Done")
+});
+
+</script>
+</html>
