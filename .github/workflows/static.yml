@@ -40,7 +40,7 @@ jobs:
       - name: Download Thumbnails
         run: ./ia download abc-dump-20-02-2023 --glob="*.jpg"
       - name: Get list of thumbs
-        run: ./ia list abc-dump-20-02-2023 --glob="*.jpg"
+        run: ls abc-dump-20-02-2023/abc-dump-20-02-2023.thumbs/ > thumb_list.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
