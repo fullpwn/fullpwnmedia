@@ -37,14 +37,10 @@ jobs:
         run: curl -LOs https://archive.org/download/ia-pex/ia
       - name: Set IA executable
         run: chmod +x ia
-      - name: Make Directory
-        run: mkdir thumbs
-      - name: CD Thumbs
-        run: cd thumbs
       - name: Download Thumbnails
         run: ./ia download abc-dump-20-02-2023 --glob="*.jpg"
-      - name: List
-        run: ls
+      - name: Get list of thumbs
+        run: ./ia list abc-dump-20-02-2023 --glob="*.jpg"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
