@@ -43,6 +43,8 @@ jobs:
         run: cd thumbs
       - name: Download Thumbnails
         run: ./ia download abc-dump-20-02-2023 --glob="*.jpg"
+      - name: List
+        run: ls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
