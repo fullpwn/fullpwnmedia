@@ -92,7 +92,7 @@ fetch('thumb_list.txt')
     for (row of rows) {
     //Split the row into each of the comma separated values
         var node = document.createElement("img");
-        node.setAttribute('src', 'abc-dump-20-02-2023/abc-dump-20-02-2023.thumbs/' + row.split(","))
+        node.setAttribute('src', 'https://https://archive.org/download/abc-dump-20-02-2023/' + row.split(","))
         node.setAttribute('class', 'image-marq');
         document.getElementById("img").appendChild(node);
     }
