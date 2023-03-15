@@ -50,3 +50,9 @@ jobs:
           # "echo" returns true so the build succeeds, even if no changed files
           git commit -m 'Update generated files' || echo
           git push
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXCLUDED: ${{ secrets.EXCLUDED }}
+          EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
+          EXCLUDE_FORKED_REPOS: false
