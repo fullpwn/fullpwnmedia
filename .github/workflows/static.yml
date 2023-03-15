@@ -61,4 +61,3 @@ jobs:
           EXCLUDED: ${{ secrets.EXCLUDED }}
           EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
           EXCLUDE_FORKED_REPOS: false
-
