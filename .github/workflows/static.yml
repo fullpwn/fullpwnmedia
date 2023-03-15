@@ -38,7 +38,7 @@ jobs:
       - name: Set IA executable
         run: chmod +x ia
       - name: Download Thumbnails
-        run: ./ia download abc-dump-20-02-2023 --glob="*.jpg"
+        run: ./ia list abc-dump-20-02-2023 --glob="*.jpg"
       - name: Get list of thumbs
         run: ls abc-dump-20-02-2023/abc-dump-20-02-2023.thumbs/ > thumb_list.txt
       - name: Upload artifact
