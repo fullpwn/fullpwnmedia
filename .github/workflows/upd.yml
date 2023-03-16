@@ -40,7 +40,7 @@ jobs:
           git config --global user.email "bot@fullpwn.net"
           git add .
           # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Update generated files' || echo
+          git commit -m 'Refresh thumb_list.txt' || echo
           git push
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
           git config --global user.email "bot@fullpwn.net"
           git add .
           # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Update generated files' || echo
+          git commit -m 'Refresh thumb_list.txt' || echo
           git push
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
