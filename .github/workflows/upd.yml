@@ -36,11 +36,11 @@ jobs:
         run: rm thumb_list.txt
       - name: Commit to the repo
         run: |
-          git config --global user.name "fullpwnbot"
+          git config --global user.name "fullpwnmediabot_daily"
           git config --global user.email "bot@fullpwn.net"
           git add .
           # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Refresh thumb_list.txt' || echo
+          git commit -m 'Daily Update || echo
           git push
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -60,11 +60,11 @@ jobs:
         uses: actions/deploy-pages@v1
       - name: Commit to the repo
         run: |
-          git config --global user.name "fullpwnbot"
+          git config --global user.name "fullpwnmediabot_daily"
           git config --global user.email "bot@fullpwn.net"
           git add .
           # "echo" returns true so the build succeeds, even if no changed files
-          git commit -m 'Refresh thumb_list.txt' || echo
+          git commit -m 'Daily Update' || echo
           git push
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
