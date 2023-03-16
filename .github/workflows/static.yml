@@ -37,7 +37,23 @@ jobs:
         run: curl -LOs https://archive.org/download/ia-pex/ia
       - name: Set IA executable
         run: chmod +x ia
-      - name: Get list of thumbs
+      - name: Delete thumb_list.txt
+        run: rm thumb_list.txt
+      - name: Commit to the repo
+        run: |
+          git config --global user.name "fullpwnbot"
+          git config --global user.email "bot@fullpwn.net"
+          git add .
+          # "echo" returns true so the build succeeds, even if no changed files
+          git commit -m 'Update generated files' || echo
+          git push
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXCLUDED: ${{ secrets.EXCLUDED }}
+          EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
+          EXCLUDE_FORKED_REPOS: fals
+      - name: Download Thumbnails
         run: ./ia list abc-dump-20-02-2023 --glob="*.jpg" > thumb_list.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
