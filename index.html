@@ -15,7 +15,7 @@
   /* (C) 2015 Apple Inc. All rights reserved.*/
 }
 
-* {
+.main {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
   text-align: center;
   margin: 0;
@@ -67,10 +67,21 @@ html {
   border-radius: 25px;
   aspect-ratio: 16 / 9;
 }
+.alert {
+  position: absolute;
+  padding: 20px;
+  background-color: #ff886e;
+  color: white;
+  border-radius: 15px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  bottom: 10px;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
+}
 
   </style>
 </head>
 <body>
+<div class="main">
 <h1>fullpwnmedia</h1>
 <h3>Archiving Australia.</h3>
 
@@ -85,11 +96,18 @@ html {
 <a href="http://youtube.com/@fullpwn">YouTube</a>
 <br>
 <a href="imgarchive">imgarchive (Beta)</a>
+</div>
 <script>
+var va = document.getElementById('video');
   function audiotoggle() {
-   var va = document.getElementById('video');
    va.muted = !va.muted;
-}
+};
+va.onerror = function() {
+  var cle = document.createElement("div") 
+  cle.setAttribute("class", "alert")
+  cle.textContent = "Oops! Something went wrong loading content. Why not give it another shot?"
+  document.body.appendChild(cle)
+};
 </script>
 </body>
 </html>
