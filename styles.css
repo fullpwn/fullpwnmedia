@@ -66,3 +66,52 @@ html {
   bottom: 35px;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
 }
+.indeterminate-progress-bar {
+    /* Color */
+    background-color: #d1d5db;
+
+    /* Rounded border */
+    border-radius: 9999px;
+    /* Size */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 0.6rem;
+    width: 50%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.indeterminate-progress-bar__progress {
+    /* Color */
+    background-color: #3b82f6;
+
+    /* Rounded border */
+    border-radius: 9999px;
+
+    /* Absolute position */
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 30%;
+
+    /* Move the bar infinitely */
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: indeterminate-progress-bar;
+}
+
+@keyframes indeterminate-progress-bar {
+    from {
+        left: -50%;
+    }
+    to {
+        left: 100%;
+    }
+}
+.svgpreload {
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
