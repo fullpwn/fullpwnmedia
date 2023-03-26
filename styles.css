@@ -3,7 +3,10 @@
   src: url("fonts/SF-Pro-Display-Bold.otf") format("opentype");
   /* (C) 2015 Apple Inc. All rights reserved.*/
 }
-
+body {
+  background-color: #2C2C2E;
+  color: white;
+}
 .main {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
   text-align: center;
@@ -11,7 +14,7 @@
   padding: 3px;
 }
 a {
-  color: black;
+  color: white;
 }
 video {
   border-radius: 25px;
@@ -22,18 +25,6 @@ video {
 html {
   margin: 35px
 }
-
-
-@media (prefers-color-scheme: dark) {
-   body {
-     background-color: #2C2C2E;
-     color: white;
-   }
-   a {
-    color: white;
-   }
-}
-
 
 .videoWrapper {
   width: 100%;
@@ -119,11 +110,21 @@ html {
 
 }
 .preload_box {
-    background: white;
+  background: #2C2C2E;
     position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     z-index: 1;
+    overflow: hidden;
+}
+.preload_greet {
+  color: white;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
+  position: sticky;
+  z-index: 3;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
