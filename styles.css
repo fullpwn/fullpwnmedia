@@ -78,6 +78,7 @@ html {
     margin-right: auto;
     height: 0.6rem;
     width: 50%;
+    z-index: 2;
 
     position: relative;
     overflow: hidden;
@@ -95,6 +96,7 @@ html {
     bottom: 0;
     top: 0;
     width: 30%;
+    z-index: 2;
 
     /* Move the bar infinitely */
     animation-duration: 1.5s;
@@ -111,7 +113,17 @@ html {
     }
 }
 .svgpreload {
-        display: block;
+
     margin-left: auto;
     margin-right: auto;
+
+}
+.preload_box {
+    background: white;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
 }
