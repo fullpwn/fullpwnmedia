@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="preload">
+  <div class="preload" id="preload">
     <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 1028 1028" class="svgpreload">
     <defs>
     <style>
@@ -43,7 +43,7 @@
 
 <div class="videoWrapper">
   <div class="ambilightWrapper">
-      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()"></video>
+      <video id="video" src="ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()"></video>
   </div>
 </div>
 <h2>Where would you like to go?</h2>
@@ -72,6 +72,5 @@ function loadComplete() {
   main.style.display = "block"
 }
 document.getElementById("main").addEventListener("load", loadComplete);
-  
 </script>
 </html>
