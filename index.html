@@ -65,9 +65,13 @@ va.onerror = function() {
   cle.textContent = "Oops! Something went wrong loading content. Why not give it another shot?"
   document.body.appendChild(cle)
 };
-va.onload = function() {
+function loadComplete() {
+  let preload = document.getElementById('preload');
+  preload.style.display = "none"
   let mainpage = document.getElementById('main');
   main.style.display = "block"
 }
+document.getElementById("main").addEventListener("load", loadComplete);
+  
 </script>
 </html>
