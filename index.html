@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="preload" id="preload" hidden>
+  <div class="preload" id="preload">
+    <div class="preload_box"></div>
     <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 1028 1028" class="svgpreload">
     <defs>
     <style>
@@ -65,12 +66,9 @@ va.onerror = function() {
   cle.textContent = "Oops! Something went wrong loading content. Why not give it another shot?"
   document.body.appendChild(cle)
 };
-function loadComplete() {
+va.onplay = function() {
   let preload = document.getElementById('preload');
   preload.style.display = "none"
-  let mainpage = document.getElementById('main');
-  main.style.display = "block"
 }
-document.getElementById("main").addEventListener("load", loadComplete);
-</script>
+</script> 
 </html>
