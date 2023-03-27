@@ -1,14 +1,11 @@
-@font-face {
-  font-family:'SF Pro Display';
-  src: url("fonts/SF-Pro-Display-Bold.otf") format("opentype");
-  /* (C) 2015 Apple Inc. All rights reserved.*/
-}
 body {
   background-color: #2C2C2E;
   color: white;
 }
 .main {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
   text-align: center;
   margin: 0;
   padding: 3px;
@@ -46,16 +43,6 @@ html {
   height: 100%;
   border-radius: 25px;
   aspect-ratio: 16 / 9;
-}
-.alert {
-  position: sticky;
-  padding: 20px;
-  background-color: #ff886e;
-  color: white;
-  border-radius: 15px;
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  bottom: 35px;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
 }
 .indeterminate-progress-bar {
     /* Color */
@@ -121,7 +108,9 @@ html {
 }
 .preload_greet {
   color: white;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"SF Pro Display";
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
   position: sticky;
   z-index: 3;
   text-align: center;
