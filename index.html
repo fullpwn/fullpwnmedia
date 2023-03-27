@@ -12,7 +12,7 @@
 <body>
   <div class="preload" id="preload">
     <div class="preload_box"></div>
-    <h3 class="preload_greet">Welcome, This could take a while.</h3>
+    <h3 class="preload_greet" id="greet">Welcome! Please Wait.</h3>
     
     <div class="indeterminate-progress-bar">
       <div class="indeterminate-progress-bar__progress"></div>
@@ -41,10 +41,7 @@ var va = document.getElementById('video');
    va.muted = !va.muted;
 };
 va.onerror = function() {
-  var cle = document.createElement("div") 
-  cle.setAttribute("class", "alert")
-  cle.textContent = "Oops! Something went wrong loading content. Why not give it another shot?"
-  document.body.appendChild(cle)
+  document.getElementById("greet").innerHTML = "Something went wrong loading the page.";
 };
 va.onplay = function() {
   let preload = document.getElementById('preload');
