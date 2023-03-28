@@ -25,7 +25,7 @@
 
 <div class="videoWrapper">
   <div class="ambilightWrapper">
-      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()"></video>
+      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()" loop ondblclick="abc_egg()"></video>
   </div>
 </div>
 <h2>Where would you like to go?</h2>
@@ -58,6 +58,8 @@ va.onplay = function() {
   let preload = document.getElementById('preload');
   preload.style.display = "none"
 }
-
+var abc_egg = function() {
+    document.getElementById("video").src = "https://archive.org/download/ABC_TV_Test_Pattern_ABQ-2_Early_80s/ABC%20TV%20Test%20Pattern%20%28ABQ-2%2C%20Early%2080s%29-TQDno0BZtBs.mp4"
+}
 </script> 
 </html>
