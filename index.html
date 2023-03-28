@@ -37,18 +37,27 @@
 </div>
 </body>
 <script>
+var hostname_check = window.location.hostname;
+console.log(hostname_check);
+  
 var va = document.getElementById('video');
   function audiotoggle() {
    va.muted = !va.muted;
 };
 va.onerror = function() {
-  document.getElementById("greet").innerHTML = "Something went wrong loading the page.";
+  if(hostname_check == "fullpwn.net") {
+    document.getElementById("greet").innerHTML = "Something went wrong loading the page.";
+} else if (hostname_check == "web.archive.org") {
+  document.getElementById("greet").innerHTML = "Wayback Machine isn't supported yet!";
+} else {
+    document.getElementById("greet").innerHTML = "Something went wrong loading the page.";;
+    }
+
 };
 va.onplay = function() {
   let preload = document.getElementById('preload');
   preload.style.display = "none"
 }
-var archive_test = window.location.hostname
-console.log(archive_test)
+
 </script> 
 </html>
