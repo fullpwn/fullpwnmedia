@@ -2,17 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E16KBMPJL7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E16KBMPJL7');
-</script>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +13,8 @@
 <body>
   <div class="preload" id="preload">
     <div class="preload_box"></div>
-    <h3 class="preload_greet" id="greet">Welcome! Please Wait.</h3>
+    <h2 class="preload_greet" id="greet">Welcome! This could take a while.</h2>
+    <i><p id="preload_fun" class="preload_fun">Boo!</p></i>
     
     <div class="indeterminate-progress-bar">
       <div class="indeterminate-progress-bar__progress"></div>
@@ -36,7 +26,7 @@
 
 <div class="videoWrapper">
   <div class="ambilightWrapper">
-      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()" loop ondblclick="abc_egg()"></video>
+      <video id="video" src="https://archive.org/download/abc-dump-20-02-2023/ABCTV_HD-02242023-1824-007.mp4#t=01:09:55" poster="vault_lion.png" playsinline autoplay muted onclick="audiotoggle()"></video>
   </div>
 </div>
 <h2>Where would you like to go?</h2>
@@ -45,43 +35,36 @@
 <a href="http://youtube.com/@fullpwn">YouTube</a>
 <br>
 <a href="imgarchive">imgarchive (Beta)</a>
-<br>
-<a rel="me" href="https://mstdn.social/@fullpwn"></a>
 </div>
 </body>
 <script>
-var hostname_check = window.location.hostname;
-  
 var va = document.getElementById('video');
   function audiotoggle() {
    va.muted = !va.muted;
 };
 va.onerror = function() {
-  if(hostname_check == "fullpwn.net") {
-    document.getElementById("greet").innerHTML = "Something went wrong loading the page.";
-} else if (hostname_check == "web.archive.org") {
-  document.getElementById("greet").innerHTML = "Wayback Machine isn't supported yet!";
-} else {
-    document.getElementById("greet").innerHTML = "Something went wrong loading the page.";;
-    }
-
+  document.getElementById("greet").innerHTML = "Something went wrong loading the page.";
 };
 va.onplay = function() {
   let preload = document.getElementById('preload');
   preload.style.display = "none"
 }
-var abc_egg = function() {
-    document.getElementById("video").src = "https://archive.org/download/ABC_TV_Test_Pattern_ABQ-2_1983/ABC%20TV%20Test%20Pattern%20%28ABQ-2%2C%201983%29-ULB7J4oxcxI.mkv#t=00:00:47"
-}
-var wayback_bypass = function() {
-  if (hostname_check == "web.archive.org") {
-    let preload = document.getElementById('preload');
-    preload.style.display = "none"
-    console.log("%cNote", "color: red; font-size: x-large");
-    console.log("Block has been lifted. Some features have been disabled.")
-} else {
-    console.log("Function unavailable.")
-    }
-}
+var archive_test = window.location.hostname
+console.log(archive_test)
+
+var textArray = [
+    'Downloading intergalactic space cows to your device.',
+    'Boo!',
+    'Connecting you to Mars.',
+    'Hacking your IP and sending a burrito to your address.',
+    'Cooking noodles.',
+    'Buying a shovel from Bunnings.',
+    'Getting a snag from Bunnings.',
+    'Thank you for being here ❤',
+    'Remember 16GB iPhones? Yeah, let\'s forget that.'
+];
+var randomNumber = Math.floor(Math.random()*textArray.length);
+
+document.getElementById("preload_fun").innerHTML = textArray[randomNumber];
 </script> 
 </html>

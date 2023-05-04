@@ -117,3 +117,13 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+.preload_fun {
+  color: white;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-style: italic;
+  position: sticky;
+  z-index: 3;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
