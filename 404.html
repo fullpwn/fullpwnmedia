@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - fullpwnmedia</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="https://use.typekit.net/dlr1bba.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    if (window.location.pathname === "/halfpwn") {
+      document.write("what.")
+    }
+    function openinwayback() {
+      location.replace("web.archive.org/" + document.url)
+    }
+  </script>
+</head>
+<body>
+<div class="main" id="main">
+<h1>404</h1>
+<h3>I searched everywhere for what you're looking for (I didn't) and couldn't find it.</h3>
+<h2>What would you like to do?</h2>
+<a onClick="openinwayback()">Check on the Wayback Machine</a>
+<a onClick="history.back()">Return</a>
+</div>
+</body>
+</html>
