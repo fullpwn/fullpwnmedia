@@ -9,23 +9,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" href="https://use.typekit.net/dlr1bba.css">
   <link rel="stylesheet" href="styles.css">
-  <script>
-    if (window.location.pathname === "/halfpwn") {
-      document.write("what.")
-    }
-    function openinwayback() {
-      location.replace("web.archive.org/" + document.url)
-    }
-  </script>
 </head>
-<body>
+<body id="body">
 <div class="main" id="main">
 <h1>404</h1>
 <h3>I searched everywhere for what you're looking for (I didn't) and couldn't find it.</h3>
 <h2>What would you like to do?</h2>
-<a onClick="openinwayback()">Check on the Wayback Machine</a>
- <br>
+<a onClick="openinwayback()">Make a search on Wayback Machine</a>
+  <br>
 <a onClick="history.back()">Return</a>
 </div>
+    <script>
+    if (window.location.pathname === "/halfpwn") {
+      document.getElementById("body").innerHTML="what.";
+    }
+    function openinwayback() {
+      location.replace("https://web.archive.org/" + document.URL)
+    }
+  </script>
 </body>
 </html>
